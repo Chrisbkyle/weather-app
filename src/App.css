@@ -1,0 +1,253 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Ubuntu+Mono&display=swap');
+
+:root{
+  --lighter: #1973D1;
+  --light: #135CC5;
+  --blue: #0C3BAA;
+  --dark: #061993;
+  --darker:#010280;
+}
+
+* {
+  list-style-type: none;
+  font-family: 'Roboto Mono', monospace;
+  box-sizing: border-box;
+  font-weight: 400;
+}
+
+/*
+
+    Main Classes
+
+*/
+html {
+  background-color: black;
+}
+
+.mainContainer {
+  /* background-color: var(--darker); */
+  background-color: var(--darker);
+  display: grid;
+  grid-template-columns: repeat(3, 330px);
+  grid-template-rows: repeat(3, 150px);
+  width: 990px;
+  height: 450px;
+  margin: auto;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+/*
+
+    Today's Weather classes
+
+*/
+
+.currentContainer {
+  grid-column: 1 / span 2;
+  grid-row: 1 / span 2;
+  display: grid;
+  grid-template-columns: 33.33% 33.33% 33.33%;
+  grid-template-rows: 33.33% 33.33% 33.33%;
+  background-color: var(--lighter);
+  border: 5px solid var(--darker);
+}
+
+.currentWeather {
+  grid-column: 1 / span 1;
+  grid-row: 1 / span 3;
+  border-right: 10px solid var(--darker);
+}
+.currentTitle {
+  background-color: var(--blue);
+  width: 100%;
+  height: 15%;
+  margin-top: 0;
+  /* color: white; */
+  text-align: center;
+}
+.currentWeather > figure {
+  height: 50%;
+  text-align: center;
+}
+.currentWeather > figure > img {
+  height: 80px;
+  width: 80px;
+}
+  .currentWeather > div {
+    width: 100%;
+    height: 50%;
+    /* margin: 1.5em; */
+  }
+  .currentTempHum {
+    padding: 1em;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    width: 100%;
+    /* color: white; */
+    background-color: var(--blue);
+    font-size: .75em;
+  }
+
+
+.currentTimeTemp {
+  grid-column: 2 / span 2;
+  grid-row: 1 / span 2;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--blue);
+}
+  .currentTime {
+    text-align: center;
+    /* color: white; */
+    font-size: 2em;
+    width: 400px;
+  }
+
+.currentWind {
+  grid-column: 2/ span 2;
+  grid-row: 3 / span 1;
+}
+.currentWind > div {
+  width: 100px;
+  font-size: .75em;
+}
+
+/*
+
+    Seven Day Forcast classes
+
+*/
+
+.flex-container {
+  grid-column: 3 / span 1;
+  grid-row: 1 / span 4;
+  gap: 4px;
+  margin: 2px 2px;
+  overflow-y: hidden;
+  background-color: var(--darker);
+}
+/* .flex-item {
+  background-color: grey;
+} */
+.flex-item-header {
+  font-size: 1.5em;
+  height: 60px;
+  transition: .5s;
+  text-align: center;
+  background-color: var(--light);
+  padding: auto 25px;
+}
+.arrow{
+  float: right;
+  padding: auto 15px auto 0;
+}
+.flex-item-header.small {
+  font-size: 1em;
+  height: 20px;
+}
+.flex-item-content {
+  height: 0px;
+  transition: .5s;
+  overflow: hidden;
+}
+.flex-item-content > figure {
+  justify-items: center;
+  align-items: center;
+  height: 75px;
+  width: 75px;
+  margin: auto;
+}
+.flex-item-content.showing {
+  height: 275px;
+  transition: .5s;
+  margin: 0;
+}
+.weekDescription {
+  margin: 0;
+  background-color: var(--dark);
+  color: white;
+  height: 100%;
+  width: 100%;
+}
+.weekTempWind {
+  gap: 2em;
+  font-size: 14px;
+  background-color: var(--light);
+  width: 100%;
+  height: 100%;
+}
+.weekTempWind > div {
+  line-height: 2em;
+}
+
+/*
+
+    48hr Forcast classes
+
+*/
+
+
+.hourlyContainer {
+  border-left: 5px solid var(--darker);
+  justify-content: center;
+  align-items: center;
+  grid-column: 1 / span 2;
+  grid-row: 3 / span 1;
+  background-color: var(--darker);
+}
+.hourlyTitle{
+  margin: 0 0 2px 0;
+  color: white;
+  text-align: center;
+}
+.hourlyCarousel {
+  gap: 8px;
+  display: grid;
+  grid-auto-flow: column;
+  overflow-x: scroll;
+  overflow: hidden;
+  cursor: grab;
+}
+.hourlyCarousel:active {
+  cursor: grabbing;
+}
+.hourlyCard {
+  width: 100px;
+  height: 120px;
+  font-size: .7em;
+  background-color: grey;
+  border: 1px solid black;
+}
+  .hourlyTime {
+    text-align: center;
+    font-weight: 800;
+    color: white;
+    background-color: var(--blue);
+    padding: 5px;
+  }
+  .hourlyDescription {
+    background-color: var(--blue);
+    height: 100%;
+    color: white;
+    padding: 5px 15px;
+  }
+
+
+
+
+
+
+
+

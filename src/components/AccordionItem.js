@@ -1,0 +1,43 @@
+import React, { useState } from 'react';
+import '../App.css'
+import { toUpper, windDir } from './Utils';
+
+export default function AccordionItem({key, forcast, onToggle, active, resize, day}) {
+
+// console.log(forcast)
+
+
+
+
+// console.log(description)
+
+
+    return(
+        <div className='flex-item'>
+            <div onClick={onToggle} className={`flex-item-header ${resize ? 'small' : ''}`}>
+                <div>{day}               {active ? '\u25B2' : '\u25BC'} </div>
+            </div>
+            <div className={`flex-item-content flex-col ${active ? 'showing' : ''}`}>
+                <div className='weekDescription flex-row'>
+                    <figure>
+                        <img src={`https://openweathermap.org/img/wn/${forcast.weather[0].icon}.png`}></img>
+                        {/* <img src={smallIcon(forcast.weather[0].icon)}></img> */}
+                        <figcaption>{toUpper(forcast.weather[0].description)}</figcaption>
+                    </figure>
+                    <div>{forcast.summary}</div>
+                </div>
+                <div className='weekTempWind flex-row'>
+                    <div>
+                        <div>Low Temp {Math.round(forcast.temp.min)} °C</div>
+                        <div>High Temp {Math.round(forcast.temp.max)} °C</div>
+                        <div>Humidity {forcast.humidity} %</div>
+                    </div>
+                    <div>
+                        <div>Wind Speed {forcast.wind_speed} kph</div>
+                        <div>Wind Direction {windDir(forcast.wind_deg)}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    )
+}

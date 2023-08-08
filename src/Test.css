@@ -1,0 +1,39 @@
+* {
+    color: white;
+    box-sizing: border-box;
+}
+.flex-container {
+    grid-column: 4 / span 1;
+    grid-row: 1 / span 4;
+    display: flex;
+    flex-direction: column;
+    width: 20vw;
+    height: 430px;
+    border: 1px solid white;
+    background-color: grey;
+    overflow-y: hidden;
+}
+.flex-item {
+    border: 1px solid white;
+}
+.flex-item-header {
+    border: 1px solid white;
+    transition: 1s;
+}
+.small {
+    height: 20px;
+}
+.large {
+    height: 50px;
+    transition: 1s;
+}
+.flex-item-content {
+    height: 0px;
+    border: 1px solid white;
+    transition: 1s;
+    overflow: hidden;
+}
+.flex-item-content.showing {
+    height: 260px;
+    transition: 1s;
+}
