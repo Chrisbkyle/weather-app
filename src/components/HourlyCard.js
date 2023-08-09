@@ -6,7 +6,6 @@ import moment from 'moment'
 
 export default function HourlyCard(props) {
 
-    console.log(props.hour)
 
     return(
         <div>

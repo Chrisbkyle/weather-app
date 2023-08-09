@@ -3,6 +3,7 @@ import axios from 'axios'
 import Current from './Current';
 import SevenDayAccordion from './SevenDayAccordion';
 import Hourly from './HourlySlider';
+import { windDir } from './Utils'
 import '../App.css'
 
 class GetApiClass extends Component {

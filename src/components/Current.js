@@ -18,7 +18,6 @@ export default function Current(props){
                     <h3 className='currentTitle'>Current Weather</h3>
                     <figure>
                         <img src={`https://openweathermap.org/img/wn/${props.weatherIcon}.png`} alt='icon of the current weather'/>
-                        {/* <img src={smallIcon(props.weatherIcon)} alt='icon of the current weather'/> */}
                         <figcaption>{toUpper(props.weatherDescription)}</figcaption>
                     </figure>
                     <ul class='currentTempHum'>
@@ -32,7 +31,7 @@ export default function Current(props){
                 </div>
                 <div class='currentWind flex-row'>
                     <div>Wind Speed {props.windSpeed} kph</div>
-                    <div>Direction {windDir(+props.windDirection)}</div>
+                    <div>Direction {windDir(props.windDirection)}</div>
                 </div>
             </div>
         </>

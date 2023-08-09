@@ -149,6 +149,9 @@ html {
   background-color: var(--light);
   padding: auto 25px;
 }
+.flex-item-header:hover {
+  background-color: var(--blue);
+}
 .arrow{
   float: right;
   padding: auto 15px auto 0;
@@ -243,6 +246,26 @@ html {
     color: white;
     padding: 5px 15px;
   }
+
+/*
+
+  Footer styles
+
+*/
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: grey;
+  width: 100%;
+  
+}
+
+.footerText {
+  text-align: center;
+  padding: 10px;
+}
 
 
 
