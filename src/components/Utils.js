@@ -9,7 +9,7 @@ export const toUpper = (str) => {
 }
 
 export const windDir = (num) => {
-    if(num >= 316 && num <= 360 || num === 0 && num <= 22) { return "N" } 
+    if((num >= 339 && num <= 360) || (num === 0 && num <= 22)) { return "N" } 
     if(num >= 23 && num <= 67) { return "NE"}
     if(num >= 68 && num <= 112) {return "E"}
     if(num >= 113 && num <= 157) {return "SE"}
