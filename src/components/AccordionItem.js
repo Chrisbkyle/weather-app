@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import '../App.css'
 import { toUpper, windDir } from './Utils';
 
@@ -13,7 +13,7 @@ export default function AccordionItem({key, forcast, onToggle, active, resize, d
             <div className={`flex-item-content flex-col ${active ? 'showing' : ''}`}>
                 <div className='weekDescription flex-row'>
                     <figure>
-                        <img src={`https://openweathermap.org/img/wn/${forcast.weather[0].icon}.png`}></img>
+                        <img src={`https://openweathermap.org/img/wn/${forcast.weather[0].icon}.png`} alt="Weekly weather icon"></img>
                         <figcaption>{toUpper(forcast.weather[0].description)}</figcaption>
                     </figure>
                     <div>{forcast.summary}</div>
