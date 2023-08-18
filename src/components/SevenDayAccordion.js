@@ -15,7 +15,7 @@ export default function SevenDayAccordion(props) {
         console.log(clicked)
         setResize(true)
         if (clicked === index) {
-            return setClicked('0') && setResize(false);
+            return setClicked('0'), setResize(false);
         }
         setClicked(index)
     };
