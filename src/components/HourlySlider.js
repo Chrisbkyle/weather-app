@@ -17,14 +17,26 @@ export default function Hourly(props) {
     useEffect(() => {
         if (slider && slider.current) {
           let sliderRef = slider.current;
-          sliderRef.addEventListener("mousedown", down);
-          sliderRef.addEventListener("mouseup", up);
-          sliderRef.addEventListener("mousemove", move);
-    
-          return () => {
-            sliderRef.removeEventListener("mousedown", down);
-            sliderRef.removeEventListener("mouseup", up);
-            sliderRef.removeEventListener("mousemove", move);
+          if(window.PointerEvent) {
+            sliderRef.addEventListener("pointerdown", down);
+            sliderRef.addEventListener("pointerup", up);
+            sliderRef.addEventListener("pointermove", move);
+
+            return () => {
+              sliderRef.removeEventListener("pointerdown", down);
+              sliderRef.removeEventListener("pointerup", up);
+              sliderRef.removeEventListener("pointermove", move);
+            }
+          } else {
+            sliderRef.addEventListener("mousedown", down);
+            sliderRef.addEventListener("mouseup", up);
+            sliderRef.addEventListener("mousemove", move);
+          
+            return () => {
+              sliderRef.removeEventListener("mousedown", down);
+              sliderRef.removeEventListener("mouseup", up);
+              sliderRef.removeEventListener("mousemove", move);
+            }
           };
         }
       }, []);

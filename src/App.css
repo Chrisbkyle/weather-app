@@ -31,7 +31,7 @@ html {
   grid-template-columns: repeat(3, 330px);
   grid-template-rows: repeat(3, 150px);
   width: 990px;
-  height: 450px;
+  height: 460px;
   margin: auto;
 }
 
@@ -133,7 +133,7 @@ html {
 .flex-container {
   grid-column: 3 / span 1;
   grid-row: 1 / span 4;
-  gap: 4px;
+  gap: 5px;
   margin: 2px 2px;
   overflow-y: hidden;
   background-color: var(--darker);
@@ -204,6 +204,7 @@ html {
 
 .hourlyContainer {
   border-left: 5px solid var(--darker);
+  border-right: 5px solid var(--darker);
   justify-content: center;
   align-items: center;
   grid-column: 1 / span 2;
@@ -227,8 +228,8 @@ html {
   cursor: grabbing;
 }
 .hourlyCard {
-  width: 100px;
-  height: 120px;
+  width: 95px;
+  height: 130px;
   font-size: .7em;
   background-color: grey;
   border: 1px solid black;
