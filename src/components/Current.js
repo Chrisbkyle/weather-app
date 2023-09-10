@@ -21,7 +21,7 @@ export default function Current(props){
                         <figcaption>{toUpper(props.weatherDescription)}</figcaption>
                     </figure>
                     <ul class='currentTempHum'>
-                        <li>Temperature {props.temp} {'\u2103'};</li>
+                        <li>Temperature {props.temp} {'\u2103'}</li>
                         <li>Humidity {props.humidity} %</li>
                         <li>Feels Like {props.feelsLike} {'\u2103'}</li>
                     </ul>
