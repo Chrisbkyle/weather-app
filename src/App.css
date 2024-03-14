@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Ubuntu+Mono&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root{
   --lighter: #F5FCFF;
@@ -24,8 +27,7 @@ html {
   background-color:var(--light);
 }
 
-.mainContainer {
-  /* background-color: var(--darker); */
+/* .mainContainer {
   background-color: var(--darker);
   display: grid;
   grid-template-columns: repeat(3, 330px);
@@ -33,9 +35,10 @@ html {
   width: 990px;
   height: 460px;
   margin: auto;
-}
+  box-shadow:4px 4px rgba(0,0,0,.4);
+} */
 
-.flex-col {
+/* .flex-col {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -46,7 +49,7 @@ html {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-}
+} */
 
 /*
 
@@ -61,13 +64,15 @@ html {
   grid-template-columns: 33.33% 33.33% 33.33%;
   grid-template-rows: 33.33% 33.33% 33.33%;
   background-color: var(--dark);
-  border: 5px solid var(--darker);
+  margin: 5px;
+  border: 1px solid black;
 }
 
 .currentWeather {
   grid-column: 1 / span 1;
   grid-row: 1 / span 3;
-  border-right: 10px solid var(--darker);
+  margin-right: 10px;
+  border: 1px solid black;
 }
 .currentTitle {
   background-color: var(--blue);
@@ -105,6 +110,7 @@ html {
   justify-content: center;
   align-items: center;
   background-color: var(--blue);
+  border: 1px solid black;
 }
   .currentTime {
     text-align: center;
@@ -115,6 +121,7 @@ html {
 .currentWind {
   grid-column: 2/ span 2;
   grid-row: 3 / span 1;
+  border: 1px solid black;
 }
 .currentWind > div {
   width: 100px;
@@ -134,6 +141,7 @@ html {
   margin: 2px 2px;
   overflow-y: hidden;
   background-color: var(--darker);
+  border: 1px solid black;
 }
 .flex-item-header {
   font-size: 1.5em;
@@ -142,6 +150,7 @@ html {
   text-align: center;
   background-color: var(--blue);
   padding: auto 25px;
+  border: 1px solid black;
 }
 .flex-item-header:hover {
   background-color: var(--dark);
@@ -176,6 +185,7 @@ html {
   background-color: var(--dark);
   height: 100%;
   width: 100%;
+  border: 1px solid black;
 }
 .weekTempWind {
   gap: 2em;
@@ -183,6 +193,7 @@ html {
   background-color: var(--light);
   width: 100%;
   height: 100%;
+  border: 1px solid black;
 }
 .weekTempWind > div {
   line-height: 2em;
@@ -203,13 +214,17 @@ html {
   grid-column: 1 / span 2;
   grid-row: 3 / span 1;
   background-color: var(--darker);
+  /* border: 1px solid black; */
 }
 .hourlyTitle{
   margin: 0 0 2px 0;
   text-align: center;
+  /* border: 1px solid black; */
 }
 .hourlyCarousel {
-  gap: 8px;
+  gap: 4px;
+  /* margin: 4px; */
+  height: 120px;
   display: grid;
   grid-auto-flow: column;
   overflow-x: scroll;
@@ -217,16 +232,18 @@ html {
   cursor: grab;
   touch-action: none;
   overscroll-behavior-inline: contain;
+  /* border: 1px solid black; */
 }
 .hourlyCarousel:active {
   cursor: grabbing;
 }
 .hourlyCard {
   width: 95px;
-  height: 130px;
+  height: 120px;
+  margin: 2px 0;
   font-size: .7em;
   background-color: var(--dark);
-  /* border: 1px solid black; */
+  border: 1px solid black;
 }
   .hourlyTime {
     text-align: center;
@@ -236,6 +253,7 @@ html {
   }
   .hourlyDescription {
     background-color: var(--blue);
+    /* min-height: 63px; */
     height: 100%;
     padding: 5px 15px;
   }

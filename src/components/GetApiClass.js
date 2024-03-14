@@ -1,9 +1,13 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import Current from './Current';
-import SevenDayAccordion from './SevenDayAccordion';
-import Hourly from './HourlySlider';
+import CurrentDay from './CurrentDay'
+import SevenDayAccordion from './SevenDayAccordion'
+import Hourly from './Hourly'
 import '../App.css'
+
+// const setTab = function(e) {
+//     setActiveTab(e.target.value)
+// }
 
 class GetApiClass extends Component {
  constructor(props) {
@@ -18,9 +22,14 @@ class GetApiClass extends Component {
             wind_deg: ''
         },
         sevenDay: {forcast: []},
-        hourly: {forcast: []}
+        hourly: {forcast: []},
+        activeTab: 'tab1' 
     }
+    this.onClick = this.setTab.bind('tab1')
  }
+
+
+
  componentDidMount() {
     axios.get('https://api.openweathermap.org/data/3.0/onecall?lat=-36&lon=174&appid=2fccb69a109cd8a07d1b49fdba14fc34&units=metric')
     .then((response) => {
@@ -44,25 +53,56 @@ class GetApiClass extends Component {
       console.log(err)
     })
  }
+ 
+ setTab = (e) => {
+    this.setState({
+        activeTab: e.target.value
+    })
+}
+
+tabDisplayed = (e) => {
+    console.log(this.state.activeTab)
+    if(this.state.activeTab === 'tab1') {
+        return <CurrentDay data={this.state.current}/>
+    } else if (this.state.activeTab === 'tab2') {
+        return <SevenDayAccordion  forcast={this.state.sevenDay.forcast}/>
+    } else if (this.state.activeTab === 'tab3') {
+        return <Hourly data={this.state.hourly} />
+    } else {
+        return <div>nyet!</div>
+    }
+}
 
  render() {
 
     return( 
-            <div class='mainContainer'>
+            <div className='border-2 rounded-t-lg w-1000 h-500 m-auto'
+            // className='mainContainer'
+            >
             {/* <h1>Auckland Weather</h1> */}
-                <Current 
-                    temp={this.state.current.temp} 
-                    humidity={this.state.current.humidity} 
-                    feelsLike={this.state.current.feels_like} 
-                    weatherIcon={this.state.current.weather[0].icon} 
-                    weatherMain={this.state.current.weather[0].main} 
-                    weatherDescription={this.state.current.weather[0].description} 
-                    windSpeed={this.state.current.wind_speed} 
-                    windDirection={this.state.current.wind_deg}
-                />
-                <SevenDayAccordion forcast={this.state.sevenDay.forcast}/>
-                {/* <SevenDay forcast={this.state.sevenDay.forcast}/> */}
-                <Hourly forcast={this.state.hourly.forcast}/>
+                <div className='flex text-xl border-b-2'>
+                        <button 
+                        className="flex-2 border-x-2 border-t-2 rounded-t-lg py-1" 
+                        value='tab1' 
+                        onClick={this.setTab}>
+                            Today
+                        </button>
+                        <button 
+                        className="flex-2 border-x-2 border-t-2 rounded-t-lg py-1" 
+                        value='tab2' 
+                        onClick={this.setTab}>
+                            7 Day Forcast
+                        </button>
+                        <button 
+                        className="flex-2 border-x-2 border-t-2 rounded-t-lg py-1" 
+                        value='tab3' 
+                        onClick={this.setTab}>
+                            Hourly
+                        </button>
+                </div>
+                <div>
+                    {this.tabDisplayed()}
+                </div>
             </div>
         )
  }
