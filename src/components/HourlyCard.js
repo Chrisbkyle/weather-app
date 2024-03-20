@@ -13,7 +13,7 @@ export default function HourlyCard(props) {
         <div>
             <div className='hourlyCard'>
                 <div className='hourlyTime'>
-                    {/* <div>{props.hour}</div> */}
+                    <div>{props.hour}</div>
                 </div>
                 <div className='flex-row'>
                     <img src={`https://openweathermap.org/img/wn/${forcast.weather[0].icon}.png`} alt='Hourly weather icon'></img>

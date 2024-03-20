@@ -76,7 +76,7 @@ tabDisplayed = (e) => {
  render() {
 
     return( 
-            <div className='border-2 rounded-t-lg w-1000 h-500 m-auto'
+            <div className='border-2 rounded-t-lg w-1000 h-500px m-auto'
             // className='mainContainer'
             >
             {/* <h1>Auckland Weather</h1> */}
