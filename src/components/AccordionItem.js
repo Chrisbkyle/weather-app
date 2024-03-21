@@ -4,7 +4,7 @@ import { toUpper, windDir } from './Utils';
 
 export default function AccordionItem({key, forcast, onToggle, active, resize, day}) {
 
-    console.log(forcast )
+    // console.log(forcast )
 
 
     return(

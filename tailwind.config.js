@@ -5,6 +5,10 @@ module.exports = {
   ],
   theme: {
     colors: {
+      'lighter':'#F5FCFF',
+      'light':'#DBF3FA',
+      'blue':'#B7E9F7',
+      'dark':'#92DFF3',
       'darker': '#7AD7F0'
     },
     width: {

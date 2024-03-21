@@ -1,5 +1,5 @@
 import React, {useEffect, useRef} from 'react';
-import HourlyCard from './HourlyCard'
+import HourlyCard from '../HourlyCard'
 import moment from 'moment'
 import '../App.css';
 

@@ -61,12 +61,15 @@ class GetApiClass extends Component {
 }
 
 tabDisplayed = (e) => {
-    console.log(this.state.activeTab)
+    // console.log(this.state.activeTab)
     if(this.state.activeTab === 'tab1') {
+        console.log(this.state.current)
         return <CurrentDay data={this.state.current}/>
     } else if (this.state.activeTab === 'tab2') {
+        console.log(this.state.sevenDay.forcast)
         return <SevenDayAccordion  forcast={this.state.sevenDay.forcast}/>
     } else if (this.state.activeTab === 'tab3') {
+        console.log(this.state.hourly)
         return <Hourly data={this.state.hourly} />
     } else {
         return <div>nyet!</div>

@@ -6,7 +6,7 @@ import '../App.css';
 
 export default function SevenDayAccordion(props) {
 
-    console.log(props.forcast)
+    // console.log(props.forcast)
 
     const [clicked, setClicked] = useState('0')
     const [resize, setResize] = useState(false)

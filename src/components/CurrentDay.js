@@ -4,7 +4,7 @@ import { toUpper, windDir } from './Utils';
 
 export default function CurrentDay(props) {
 
-    console.log(props.data)
+    // console.log(props.data)
 
     
     let today = new Date()
