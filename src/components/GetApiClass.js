@@ -13,6 +13,8 @@ class GetApiClass extends Component {
  constructor(props) {
     super(props);
     this.state = {
+        latitude: -36,
+        longitude: 174,
         current: {
             temp: '',
             humidity: '',
@@ -31,9 +33,26 @@ class GetApiClass extends Component {
 
 
  componentDidMount() {
-    axios.get('https://api.openweathermap.org/data/3.0/onecall?lat=-36&lon=174&appid=2fccb69a109cd8a07d1b49fdba14fc34&units=metric')
+    // console.log(this.props)
+    if("geolocation" in navigator) {
+        console.log("these are the droids you're looking for");
+        navigator.geolocation.getCurrentPosition(function(e) {
+          console.log(e.coords)
+          this.setState({
+            latitude: e.coords.latitude.toFixed(3),
+            longitude: e.coords.longitude.toFixed(3)})
+        })
+      } else {
+        console.log("theses aren't the droids you're looking for");
+    }
+    axios.get(`https://us1.locationiq.com/v1/reverse?key=pk.9d8a3172e1cc856946b0ef12fbc1f9ff&lat=${this.props.location.latitude}&lon=${this.props.location.longitude}&format=json`)
     .then((response) => {
-        // console.log(response.data)
+        console.log(response)
+        // return response
+    })
+    axios.get(`https://api.openweathermap.org/data/3.0/onecall?lat=${this.props.location.latitude}&lon=${this.props.location.longitude}&appid=2fccb69a109cd8a07d1b49fdba14fc34&units=metric`)
+    .then((response) => {
+        console.log(response)
         this.setState({current: {
             temp: response.data.current.temp,
             humidity: response.data.current.humidity,
@@ -52,6 +71,7 @@ class GetApiClass extends Component {
     }).catch(err => {
       console.log(err)
     })
+
  }
  
  setTab = (e) => {
@@ -63,13 +83,13 @@ class GetApiClass extends Component {
 tabDisplayed = (e) => {
     // console.log(this.state.activeTab)
     if(this.state.activeTab === 'tab1') {
-        console.log(this.state.current)
+        // console.log(this.state.current)
         return <CurrentDay data={this.state.current}/>
     } else if (this.state.activeTab === 'tab2') {
-        console.log(this.state.sevenDay.forcast)
+        // console.log(this.state.sevenDay.forcast)
         return <SevenDayAccordion  forcast={this.state.sevenDay.forcast}/>
     } else if (this.state.activeTab === 'tab3') {
-        console.log(this.state.hourly)
+        // console.log(this.state.hourly)
         return <Hourly data={this.state.hourly} />
     } else {
         return <div>nyet!</div>

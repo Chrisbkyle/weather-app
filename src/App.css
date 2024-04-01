@@ -23,9 +23,11 @@
     Main Classes
 
 */
-/* html {
-  background-color:var(--light);
-} */
+html {
+  /* background-color:var(--light); */
+  background-color: black;
+  /* color: white; */
+}
 
 /* .mainContainer {
   background-color: var(--darker);
