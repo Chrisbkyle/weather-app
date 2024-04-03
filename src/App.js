@@ -8,10 +8,24 @@ import Footer from './components/Footer';
 
 function App() {
 
+  let [latitude, setLatitude] = useState();
+  let [longitude, setLongitude] = useState();
 
+    let setLocation = () => {
+        if("geolocation" in navigator) {
+            navigator.geolocation.getCurrentPosition(function(e) {
+              setLatitude(e.coords.latitude.toFixed(3))
+              setLongitude(e.coords.longitude.toFixed(3))
+            })
+          } else {
+            setLatitude(-34)
+            setLongitude(174)
+          }
+    }
+  setLocation();
   return (
     <div className="App">
-      <Header />
+      <Header location={{latitude, longitude}}/>
       {/* <GetApi /> */}
       <Footer />
     </div>
