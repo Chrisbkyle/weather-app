@@ -25,7 +25,9 @@
 */
 html {
   /* background-color:var(--light); */
-  background-color: black;
+  /* background-color: black; */
+  
+  background-color: white;
   /* color: white; */
 }
 
