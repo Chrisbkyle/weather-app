@@ -25,7 +25,7 @@ export default function SevenDayAccordion(props) {
 
 
     return (
-        <div className='flex-container flex-col'>
+        <div className='flex-container flex-row'>
             {sevenDays.map((e, index) => (
             <div>
                 <AccordionItem 

@@ -9,50 +9,22 @@ import '../App.css'
 //     setActiveTab(e.target.value)
 // }
 
-export default function GetApi() {
+export default function Main({location}) {
 
-    let [latitude, setLatitude] = useState();
-    let [longitude, setLongitude] = useState();
+    let [latitude, setLatitude] = useState(location.latitude);
+    let [longitude, setLongitude] = useState(location.longitude);
     let [activeTab, setActiveTab] = useState();
-    let [cityName, setCityName] = useState();
     let [data, setData] = useState();
 
-
-    // let setLocation = () => {
-    //     if("geolocation" in navigator) {
-    //         navigator.geolocation.getCurrentPosition(function(e) {
-    //           setLatitude(e.coords.latitude.toFixed(3))
-    //           setLongitude(e.coords.longitude.toFixed(3))
-    //         })
-    //       } else {
-    //         setLatitude(-34),
-    //         setLongitude(174)
-    //       }
-    // }
     
-    const handleClick = () => {
-        console.log(latitude, longitude)
-    }
-
-    const fetchData = async (lat, long) => {
-        axios.get(`https://us1.locationiq.com/v1/reverse?key=pk.9d8a3172e1cc856946b0ef12fbc1f9ff&lat=${lat}&lon=${long}&format=json`)
-        .then((res) => 
-            // console.log(res)
-            setCityName(res.data.address.city)
-            )
-        .catch((err) => 
-            console.log(err)
-            )
-        axios.get(`https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${long}&appid=2fccb69a109cd8a07d1b49fdba14fc34&units=metric`)
+    useEffect(() => { 
+        axios.get(`https://api.openweathermap.org/data/3.0/onecall?lat=${latitude}&lon=${longitude}&appid=2fccb69a109cd8a07d1b49fdba14fc34&units=metric`)
         .then((res) => 
         setData(res.data)
             )
         .catch((err) => 
             console.log(err)
             )
-    }
-    useEffect(() => { 
-
     }, [])
 
     const setTab = (e) => {
@@ -60,33 +32,25 @@ export default function GetApi() {
     }
     
     const tabDisplayed = (e) => {
-        console.log(activeTab)
-        // console.log(data.current)
+        // console.log(activeTab)
         if(activeTab === 'tab1') {
-            console.log(data.current)
-            return <CurrentDay data={data}/>
+            // console.log(data.current)
+            return <CurrentDay data={data.current}/>
         } else if (activeTab === 'tab2') {
-            console.log(data)
-            return <SevenDayAccordion  
-            forcast={data.daily}
-            />
+            // console.log(data.daily)
+            return <SevenDayAccordion forcast={data.daily}/>
         } else if (activeTab === 'tab3') {
-            console.log(data.hourly)
-            return <Hourly 
-            data={data.hourly} 
-            />
+            console.log(data)
+            return <Hourly forcast={data.hourly} />
         } else {
             return <div>nyet!</div>
         }
     }
     return(
         <>
-            <h1 style={{textAlign: 'center'}}>{cityName} Weather</h1>
             <div className='border-2 rounded-t-lg w-1000px h-575px m-auto bg-folder'
             // className='mainContainer'
             >
-            {/* <h1>Auckland Weather</h1> */}
-            <button onClick={e => handleClick(e)}>ClickMe</button>
                 <div className='flex text-xl border-b-2'>
                         <button 
                         className="flex-2 border-x-2 border-t-2 rounded-t-lg py-1" 

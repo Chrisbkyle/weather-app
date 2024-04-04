@@ -12,7 +12,6 @@ export default function CurrentDay(props) {
 
     return (
         <div>
-            <h1>1</h1>
             <div className='currentContainer'>
                 <div className='currentWeather flex-col'>
                     <h3 className='currentTitle'>Current Weather</h3>

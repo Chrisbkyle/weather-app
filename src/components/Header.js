@@ -5,19 +5,13 @@ import axios from 'axios'
 
 const Header = ({location}) => {
 
-    let [latitude, setLatitude] = useState();
-    let [longitude, setLongitude] = useState();
+    let [latitude, setLatitude] = useState(location.latitude);
+    let [longitude, setLongitude] = useState(location.longitude);
     let [cityName, setCityName] = useState('nyet');
 
-    console.log(latitude);
 
-    const setLocation = () => {
-        setLatitude(location.latitude);
-        setLongitude(location.longitude);
-    }
-    
     useEffect(() => {
-        axios.get(`https://us1.locationiq.com/v1/reverse?key=pk.9d8a3172e1cc856946b0ef12fbc1f9ff&lat=${latitude}&lon=${longitude}&format=json`)
+        axios.get(`https://us1.locationiq.com/v1/reverse?key=pk.9d8a3172e1cc856946b0ef12fbc1f9ff&lat=${location.latitude}&lon=${location.longitude}&format=json`)
         .then((res) => {
             // console.log(res),
             if('city' in res.data.address) {

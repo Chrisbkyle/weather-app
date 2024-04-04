@@ -5,10 +5,12 @@ import { toUpper } from "./Utils";
 
 
 
-export default function Hourly({data}) {
+export default function Hourly({forcast}) {
 
-    const hour1 = data.forcast[0]
-    const hours2to24 = data.forcast.slice(1, 25)
+    console.log(forcast)
+
+    const hour1 = forcast[0]
+    const hours2to24 = forcast.slice(1, 25)
     console.log(hours2to24)
     let i = 1;
     let b = 1;
