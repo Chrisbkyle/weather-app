@@ -138,9 +138,7 @@ html {
 
 */
 
-.flex-container {
-  grid-column: 3 / span 1;
-  grid-row: 1 / span 4;
+/* .flex-container {
   gap: 5px;
   margin: 2px 2px;
   overflow-y: hidden;
@@ -149,7 +147,7 @@ html {
 }
 .flex-item-header {
   font-size: 1.5em;
-  height: 60px;
+  height: 400px;
   transition: .5s;
   text-align: center;
   background-color: var(--blue);
@@ -165,7 +163,7 @@ html {
 }
 .flex-item-header.small {
   font-size: 1em;
-  height: 20px;
+  width: 20px;
 }
 .flex-item-content {
   height: 0px;
@@ -201,7 +199,7 @@ html {
 }
 .weekTempWind > div {
   line-height: 2em;
-}
+} */
 
 /*
 
