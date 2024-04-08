@@ -11,7 +11,7 @@
     writing-mode: vertical-rl;
     text-orientation: upright;
     height: 400px;
-    width: 138px;
+    width: 137.25px;
     transition: .5s;
     text-align: center;
     background-color: var(--blue);
@@ -27,7 +27,7 @@
   }
   .flex-item-header.small {
     font-size: 1em;
-    width: 20px;
+    width: 94.25px;
   }
   .flex-item-content {
     height: 400px;
