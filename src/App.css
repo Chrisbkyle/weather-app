@@ -82,7 +82,9 @@ html {
   grid-template-columns: 33.33% 33.33% 33.33%;
   grid-template-rows: 25% 25% 25% 25%;
   background-color: var(--dark);
-  height: 416px;
+  height: 400px;
+  width: 790px;
+  margin: 10px auto ;
 }
 
 .currentTimeTemp {
@@ -97,23 +99,30 @@ html {
 .currentWeather {
   grid-column: 1 / span 2;
   grid-row: 2 / span 3;
-  background-color: var(--blue);
+  height: 100%;
+  background-color: var(--light);
 }
 .currentWeather > figure {
+  /* height: 100%; */
+  width: 33%;
+  margin: 40px 1px;
   text-align: center;
-}
-.currentWeather > figure > img {
-  width: 100px;
   background-color: var(--darker);
 }
-  .currentWeather > div {
-    width: 100%;
-  }
-  .currentTempHum {
-    width: 100%;
-    background-color: var(--blue);
-    font-size: .75em;
-  }
+/* .currentWeather > figure > figcaption{
+  border: 1px solid black;
+} */
+.currentWeather > figure > img {
+  margin: 0 auto ;
+  width: 100px;
+}
+.currentTempHum {
+  padding: 80px 20px; 
+  width: 66%;
+  height: 100%;
+  background-color: var(--blue);
+  font-size: 1em;
+}
 
 
 
@@ -122,6 +131,7 @@ html {
   background-color: var(--blue);
   grid-column: 3 / span 1;
   grid-row: 2 / span 3;
+  border-left: 2px outset var(--darker)
 }
 .currentWind > div {
   width: 100px;
