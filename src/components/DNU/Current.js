@@ -1,6 +1,6 @@
 import React from 'react';
 import '../App.css';
-import { toUpper, windDir } from './Utils';
+import { toUpper, windDir } from '../Utils';
 
 
 

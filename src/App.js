@@ -1,5 +1,4 @@
 import './App.css';
-import './newApp.css';
 import {useState, useEffect} from 'react';
 import Header from './components/Header';
 import Main from './components/Main';

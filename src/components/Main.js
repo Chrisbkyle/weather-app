@@ -13,7 +13,7 @@ export default function Main({location}) {
 
     let [latitude, setLatitude] = useState(location.latitude);
     let [longitude, setLongitude] = useState(location.longitude);
-    let [activeTab, setActiveTab] = useState();
+    let [activeTab, setActiveTab] = useState('tab1');
     let [data, setData] = useState();
 
     
@@ -32,40 +32,41 @@ export default function Main({location}) {
     }
     
     const tabDisplayed = (e) => {
-        // console.log(activeTab)
-        if(activeTab === 'tab1') {
-            // console.log(data.current)
-            return <CurrentDay data={data.current}/>
-        } else if (activeTab === 'tab2') {
-            // console.log(data.daily)
-            return <SevenDayAccordion forcast={data.daily}/>
-        } else if (activeTab === 'tab3') {
-            console.log(data)
-            return <Hourly forcast={data.hourly} />
-        } else {
-            return <div>nyet!</div>
+        if(data) {
+            if(activeTab === 'tab1') {
+                // console.log(data.current)
+                return <CurrentDay data={data.current}/>
+            } else if (activeTab === 'tab2') {
+                // console.log(data.daily)
+                return <SevenDayAccordion forcast={data.daily}/>
+            } else if (activeTab === 'tab3') {
+                console.log(data)
+                return <Hourly forcast={data.hourly} />
+            } else {
+                return <CurrentDay data={data.current}/>
+            }
         }
     }
     return(
         <>
-            <div className='border-2 rounded-t-lg w-1000px h-575px m-auto bg-folder'
+            <div className='mainContainer'
             // className='mainContainer'
             >
-                <div className='flex text-xl border-b-2'>
+                <div className='containerTabHolder'>
                         <button 
-                        className="flex-2 border-x-2 border-t-2 rounded-t-lg py-1" 
+                        className="containerTab" 
                         value='tab1' 
                         onClick={e => setTab(e)}>
                             Today
                         </button>
                         <button 
-                        className="flex-2 border-x-2 border-t-2 rounded-t-lg py-1" 
+                        className="containerTab" 
                         value='tab2' 
                         onClick={e => setTab(e)}>
-                            7 Day Forcast
+                            7 Day
                         </button>
                         <button 
-                        className="flex-2 border-x-2 border-t-2 rounded-t-lg py-1" 
+                        className="containerTab" 
                         value='tab3' 
                         onClick={e => setTab(e)}>
                             Hourly

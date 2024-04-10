@@ -13,7 +13,7 @@ export default function AccordionItem({key, forcast, onToggle, active, resize, d
                 <div>{day}               {active ? '\u25B2' : '\u25BC'} </div>
             </div>
             <div className={`flex-item-content flex-col ${active ? 'showing' : ''}`}>
-                <div className='weekDescription flex-row'>
+                <div className='weekDescription flex-col border-black'>
                     <figure>
                         <img src={`https://openweathermap.org/img/wn/${forcast.weather[0].icon}.png`} alt="Weekly weather icon"></img>
                         <figcaption>{toUpper(forcast.weather[0].description)}</figcaption>

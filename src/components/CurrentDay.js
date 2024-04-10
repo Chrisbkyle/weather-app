@@ -14,8 +14,7 @@ export default function CurrentDay(props) {
         <div>
             <div className='currentContainer'>
                 <div className='currentWeather flex-col'>
-                    <h3 className='currentTitle'>Current Weather</h3>
-                    <figure>
+                    <figure className='flex-row'>
                         <img src={`https://openweathermap.org/img/wn/${props.data.weather[0].icon}.png`} alt='icon of the current weather'/>
                         <figcaption>{toUpper(props.data.weather[0].description)}</figcaption>
                     </figure>

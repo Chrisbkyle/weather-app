@@ -1,8 +1,6 @@
-.flex-container {
-    /* display:flex; */
+/* .flex-container {
     gap: 5px;
     margin: 2px 2px;
-    /* overflow-y: hidden; */
     background-color: var(--darker);
     border: 1px solid black;
   }
@@ -44,7 +42,6 @@
   }
   .flex-item-content.showing {
     height: 400px;
-    /* height: 100%; */
     width: 300px;
     transition: .5s;
     margin: 0;
@@ -66,4 +63,4 @@
   }
   .weekTempWind > div {
     line-height: 2em;
-  }
+  } */
