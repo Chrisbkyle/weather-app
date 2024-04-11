@@ -36,7 +36,7 @@ html {
   border: 2px solid black;
   width: 800px;
   height: 460px;
-  margin: auto;
+  margin: 50px auto auto auto;
   background-color: var(--folder);
   border-radius: .5rem .5rem 0 0;
   box-shadow:4px 4px rgba(0,0,0,.4);
@@ -70,6 +70,18 @@ html {
 .border-black {
   border: 1px solid black;
 }
+/*
+
+    Header
+
+*/
+
+.header{
+  text-align: center;
+  font-size: 1.5em;
+  padding-bottom: 5px;
+  border-bottom: 2px outset var(--darker)
+}
 
 /*
 
@@ -80,7 +92,7 @@ html {
 .currentContainer {
   display: grid;
   grid-template-columns: 33.33% 33.33% 33.33%;
-  grid-template-rows: 25% 25% 25% 25%;
+  grid-template-rows: 20% 40% 40%;
   background-color: var(--dark);
   height: 400px;
   width: 790px;
@@ -97,58 +109,69 @@ html {
   }
 
 .currentWeather {
-  grid-column: 1 / span 2;
-  grid-row: 2 / span 3;
+  grid-column: 1 / span 1;
+  grid-row: 2 / span 1;
+  /* align-items: flex-start; */
   height: 100%;
-  background-color: var(--light);
+  background-color: var(--blue);
+  /* border-right: 2px outset var(--darker); */
 }
 .currentWeather > figure {
-  /* height: 100%; */
-  width: 33%;
-  margin: 40px 1px;
+  /* height: 130px; */
+  /* width: 175px; */
+  /* margin: 30px 1px; */
   text-align: center;
-  background-color: var(--darker);
+  background-color: var(--blue);
 }
-/* .currentWeather > figure > figcaption{
-  border: 1px solid black;
-} */
+.currentWeather > figure > figcaption{
+  border-top: 2px inset var(--darker);
+}
 .currentWeather > figure > img {
   margin: 0 auto ;
   width: 100px;
 }
 .currentTempHum {
-  padding: 80px 20px; 
-  width: 66%;
+  grid-column: 2 / span 2;
+  grid-row: 2 / span 2;
+  padding: 50px 60px; 
+  width: 100%;
   height: 100%;
   background-color: var(--blue);
   font-size: 1em;
+  border-left: 2px outset var(--darker);
 }
 
-
-
-
 .currentWind {
-  grid-column: 3 / span 1;
-  grid-row: 2 / span 3;
+  grid-column: 1 / span 1;
+  grid-row: 3 / span 1;
   
   display: grid;
   grid-template-columns: 50% 50%;
   grid-template-rows: 70% 30%;
-  text-align: center;
   align-items: center;
-  border: 1px solid black;
-  margin: auto;
+  justify-content: center;
+  /* border: 1px solid black; */
+  /* margin: auto;
   height: 100%;
-  width: 100%;
-  background-color: var(--blue);
+  width: 100%; */
+  background-color: var(--dark);
+}
+.currentWindSpeed {
+  padding: 20px;
+  font-size: 1.5em!important;
 }
 .currentWind > div {
-  width: 100px;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  /* padding: 5px 0; */
   font-size: .75em;
-  border: 1px solid black;
+  /* border: 1px solid black; */
 }
-.currentWind > img {
-  border: 1px solid black;
+.currentWind > div > img {
+  width: 70px;
+  margin: 20px auto;
+  /* border: 1px solid black; */
 }
 
 /*
@@ -158,7 +181,6 @@ html {
 */
 
 .flex-container {
-  /* display:flex; */
   gap: 5px;
   margin: 2px 2px;
   /* overflow-y: hidden; */
@@ -170,7 +192,7 @@ html {
   writing-mode: vertical-rl;
   text-orientation: upright;
   height: 400px;
-  width: 137.25px;
+  width: 108.75px;
   transition: .5s;
   text-align: center;
   background-color: var(--blue);
@@ -186,7 +208,7 @@ html {
 }
 .flex-item-header.small {
   font-size: 1em;
-  width: 94.25px;
+  width: 63px;
 }
 .flex-item-content {
   height: 400px;
@@ -203,7 +225,7 @@ html {
 }
 .flex-item-content.showing {
   height: 400px;
-  width: 300px;
+  width: 320px;
   transition: .5s;
   margin: 0;
 }
@@ -213,6 +235,7 @@ html {
   height: 100%;
   width: 100%;
   border: 1px solid black;
+  text-align: center;
 }
 .weekTempWind {
   gap: 2em;
@@ -233,24 +256,28 @@ html {
 */
 
 
-/* .hourlyContainer {
-  border-left: 5px solid var(--darker);
-  border-right: 5px solid var(--darker);
-  justify-content: center;
-  align-items: center;
-  grid-column: 1 / span 2;
-  grid-row: 3 / span 1;
-  background-color: var(--darker);
+.hourlyContainer {
+  display: grid;
+  grid-template-columns: repeat(7, 14.25%);
+  grid-template-rows: repeat(4, 25%);
+  gap: 4px;
+  margin: 4px;
 }
-.hourlyTitle{
-  margin: 0 0 2px 0;
+.hourlyCardLrg {
+  height: 200px;
+  width: 206.5px;
+  background-color: var(--dark);
+  border: 1px solid black;
   text-align: center;
+  grid-column: 1 / span 2;
+  grid-row: 1 / span 2;
 }
 .hourlyCard {
-  width: 95px;
-  height: 120px;
-  margin: 2px 0;
-  font-size: .7em;
+  height: 96px;
+  width: 90px;
+  /* margin: 2px 0; */
+  font-size: .65em;
+  text-align: center;
   background-color: var(--dark);
   border: 1px solid black;
 }
@@ -261,9 +288,9 @@ html {
   }
   .hourlyDescription {
     background-color: var(--blue);
-    height: 44px;
-    padding: 5px 15px;
-  } */
+    height: 28px;
+    /* padding: 5px 15px; */
+  }
 
 /*
 

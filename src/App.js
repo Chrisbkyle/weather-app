@@ -29,7 +29,6 @@ function App() {
     if (latitude || longitude) {
       return (
         <>
-          <Header location={{latitude, longitude}} />
           <Main location={{latitude, longitude}}/> 
         </>
         )

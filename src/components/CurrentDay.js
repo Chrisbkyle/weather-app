@@ -1,5 +1,6 @@
 import React , {useState} from "react";
 import { toUpper, windDir } from './Utils';
+import Header from './Header';
 import N from '../resources/Direction/N.png'
 import NE from '../resources/Direction/NE.png'
 import E from '../resources/Direction/E.png'
@@ -19,9 +20,11 @@ const utcToHours = (utc) => {
 
 export default function CurrentDay(props) {
 
-    console.log(props.data.wind_deg)
+    console.log(props)
 
     const [compassDir, setCompassDir] = useState(windDir(props.data.wind_deg))
+    const [latitude, setLatitude] = useState(props.location.latitude);
+    const [longitude, setLongitude] = useState(props.location.longitude)
 
     const windDirImg = (dir) => {
         if(dir === 'N') {
@@ -58,7 +61,10 @@ export default function CurrentDay(props) {
                         <img src={`https://openweathermap.org/img/wn/${props.data.weather[0].icon}.png`} alt='icon of the current weather'/>
                         <figcaption>{toUpper(props.data.weather[0].description)}</figcaption>
                     </figure>
-                    <ul className='currentTempHum'>
+                </div>
+                <div className='currentTempHum'>
+                    <Header location={{latitude, longitude}}/>
+                    <ul>
                         <li>Temperature {props.data.temp}{'\u2103'}</li>
                         <li>Humidity {props.data.humidity}%</li>
                         <li>Feels Like {props.data.feels_like}{'\u2103'}</li>
@@ -71,7 +77,7 @@ export default function CurrentDay(props) {
                     <div className='currentTime'>{today.toLocaleDateString('en-US', formatOptions)}</div>
                 </div>
                 <div className='currentWind'>
-                    <div>{props.data.wind_speed} kph</div>  
+                    <div className='currentWindSpeed'>{Math.round(props.data.wind_speed)} <br></br>kph</div>  
                     <div>{windDirImg(compassDir)}</div>  
                     <div>Wind Speed</div>
                     <div>Direction {windDir(props.data.wind_deg)}</div>

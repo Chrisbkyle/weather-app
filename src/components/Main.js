@@ -35,7 +35,7 @@ export default function Main({location}) {
         if(data) {
             if(activeTab === 'tab1') {
                 // console.log(data.current)
-                return <CurrentDay data={data.current}/>
+                return <CurrentDay data={data.current} location={{latitude, longitude}}/>
             } else if (activeTab === 'tab2') {
                 // console.log(data.daily)
                 return <SevenDayAccordion forcast={data.daily}/>

@@ -7,7 +7,7 @@ const Header = ({location}) => {
 
     let [latitude, setLatitude] = useState(location.latitude);
     let [longitude, setLongitude] = useState(location.longitude);
-    let [cityName, setCityName] = useState('nyet');
+    let [cityName, setCityName] = useState('');
 
 
     useEffect(() => {
@@ -34,7 +34,7 @@ const Header = ({location}) => {
 
     return(
         <>
-            <h1>{cityName} Weather</h1>
+            <h1 className='header'>{cityName} Weather</h1>
         </>
     )
 }
