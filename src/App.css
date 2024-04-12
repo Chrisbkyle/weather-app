@@ -38,13 +38,13 @@ html {
 .containerTabHolder {
   display: flex;
   border-bottom: 2px solid black;
-  line-height: 1.75rem;
 }
 .containerTab {
   border-width: 2px 2px 0px 2px;
   border-color: black;
   border-radius: .5rem .5rem 0 0;
   font-size: 1.25rem;
+  line-height: 1.75rem;
   padding: 4px 0;
   flex: 0 0 20%;
 }
@@ -165,7 +165,7 @@ html {
 
 .flex-container {
   gap: 5px;
-  margin: 2px 2px;
+  margin: 10px 2px;
   background-color: var(--darker);
   border: 1px solid black;
 }
