@@ -1,0 +1,66 @@
+/* .flex-container {
+    gap: 5px;
+    margin: 2px 2px;
+    background-color: var(--darker);
+    border: 1px solid black;
+  }
+  .flex-item-header {
+    font-size: 1.5em;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    height: 400px;
+    width: 137.25px;
+    transition: .5s;
+    text-align: center;
+    background-color: var(--blue);
+    margin: auto;
+    border: 1px solid black;
+  }
+  .flex-item-header:hover {
+    background-color: var(--dark);
+  }
+  .arrow{
+    float: right;
+    padding: auto 15px auto 0;
+  }
+  .flex-item-header.small {
+    font-size: 1em;
+    width: 94.25px;
+  }
+  .flex-item-content {
+    height: 400px;
+    width: 0px;
+    transition: .5s;
+    overflow: hidden;
+  }
+  .flex-item-content > figure {
+    justify-items: center;
+    align-items: center;
+    height: 75px;
+    width: 75px;
+    margin: auto;
+  }
+  .flex-item-content.showing {
+    height: 400px;
+    width: 300px;
+    transition: .5s;
+    margin: 0;
+  }
+  .weekDescription {
+    margin: 0;
+    background-color: var(--dark);
+    height: 100%;
+    width: 100%;
+    border: 1px solid black;
+  }
+  .weekTempWind {
+    gap: 2em;
+    font-size: 14px;
+    background-color: var(--light);
+    width: 100%;
+    height: 100%;
+    border: 1px solid black;
+  }
+  .weekTempWind > div {
+    line-height: 2em;
+  } */

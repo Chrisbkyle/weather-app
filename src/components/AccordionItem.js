@@ -4,6 +4,7 @@ import { toUpper, windDir } from './Utils';
 
 export default function AccordionItem({key, forcast, onToggle, active, resize, day}) {
 
+
     return(
         <div className='flex-item flex-row'>
             <div onClick={onToggle} className={`flex-item-header ${resize ? 'small' : ''}`}>
