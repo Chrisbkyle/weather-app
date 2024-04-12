@@ -23,8 +23,7 @@ export default function CurrentDay(props) {
     console.log(props)
 
     const [compassDir, setCompassDir] = useState(windDir(props.data.wind_deg))
-    const [latitude, setLatitude] = useState(props.location.latitude);
-    const [longitude, setLongitude] = useState(props.location.longitude)
+    const [cityName, setCityName] = useState(props.location.cityName);
 
     const windDirImg = (dir) => {
         if(dir === 'N') {
@@ -63,7 +62,7 @@ export default function CurrentDay(props) {
                     </figure>
                 </div>
                 <div className='currentTempHum'>
-                    <Header location={{latitude, longitude}}/>
+                    <Header location={{cityName}}/>
                     <ul>
                         <li>Temperature {props.data.temp}{'\u2103'}</li>
                         <li>Humidity {props.data.humidity}%</li>

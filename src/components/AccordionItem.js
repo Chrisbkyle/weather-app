@@ -4,9 +4,6 @@ import { toUpper, windDir } from './Utils';
 
 export default function AccordionItem({key, forcast, onToggle, active, resize, day}) {
 
-    // console.log(forcast )
-
-
     return(
         <div className='flex-item flex-row'>
             <div onClick={onToggle} className={`flex-item-header ${resize ? 'small' : ''}`}>
@@ -14,7 +11,7 @@ export default function AccordionItem({key, forcast, onToggle, active, resize, d
             </div>
             <div className={`flex-item-content flex-col ${active ? 'showing' : ''}`}>
                 <div className='weekDescription flex-col border-black'>
-                    <figure>
+                    <figure className='flex-row'>
                         <img src={`https://openweathermap.org/img/wn/${forcast.weather[0].icon}.png`} alt="Weekly weather icon"></img>
                         <figcaption>{toUpper(forcast.weather[0].description)}</figcaption>
                     </figure>

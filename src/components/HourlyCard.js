@@ -5,8 +5,6 @@ import { toUpper } from './Utils'
 
 export default function HourlyCard(props) {
 
-    // console.log(props.forcast.weather[0].icon)
-
     const [forcast, setForcast] = useState(props.forcast)
 
     return(
