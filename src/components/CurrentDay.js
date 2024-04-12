@@ -1,6 +1,5 @@
-import React , {useState} from "react";
+import React , {useState, useEffect} from "react";
 import { toUpper, windDir } from './Utils';
-import Header from './Header';
 import N from '../resources/Direction/N.png'
 import NE from '../resources/Direction/NE.png'
 import E from '../resources/Direction/E.png'
@@ -23,7 +22,11 @@ export default function CurrentDay(props) {
     console.log(props)
 
     const [compassDir, setCompassDir] = useState(windDir(props.data.wind_deg))
-    const [cityName, setCityName] = useState(props.location.cityName);
+    const [cityName, setCityName] = useState();
+
+    useEffect(() => {
+        setCityName(props.location.cityName)
+    }, [cityName])
 
     const windDirImg = (dir) => {
         if(dir === 'N') {
@@ -47,14 +50,10 @@ export default function CurrentDay(props) {
         }
     }
 
-
-    
-    let today = new Date()
-    let formatOptions = {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-
-    return (
-        <div>
-            <div className='currentContainer'>
+    const nameRender = () => {
+        if(cityName) {
+            return(
+                <div className='currentContainer'>
                 <div className='currentWeather flex-row'>
                     <figure>
                         <img src={`https://openweathermap.org/img/wn/${props.data.weather[0].icon}.png`} alt='icon of the current weather'/>
@@ -62,7 +61,7 @@ export default function CurrentDay(props) {
                     </figure>
                 </div>
                 <div className='currentTempHum'>
-                    <Header location={{cityName}}/>
+                <h1 className='header'>{cityName} Weather</h1>
                     <ul>
                         <li>Temperature {props.data.temp}{'\u2103'}</li>
                         <li>Humidity {props.data.humidity}%</li>
@@ -82,6 +81,17 @@ export default function CurrentDay(props) {
                     <div>Direction {windDir(props.data.wind_deg)}</div>
                 </div>
             </div>
+            )
+        }
+    }
+
+    
+    let today = new Date()
+    let formatOptions = {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+
+    return (
+        <div>
+            {nameRender()}
         </div>
     )
 }
