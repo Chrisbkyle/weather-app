@@ -61,7 +61,7 @@ export default function CurrentDay(props) {
                     </figure>
                 </div>
                 <div className='currentTempHum'>
-                <h1 className='header'>{cityName} Weather</h1>
+                <h1 className='header'>{today.toLocaleDateString('en-US', formatOptions)}</h1>
                     <ul>
                         <li>Temperature {props.data.temp}{'\u2103'}</li>
                         <li>Humidity {props.data.humidity}%</li>
@@ -72,7 +72,7 @@ export default function CurrentDay(props) {
                     </ul>
                 </div>
                 <div className='currentTimeTemp flex-row'>
-                    <div className='currentTime'>{today.toLocaleDateString('en-US', formatOptions)}</div>
+                    <div className='currentTime'>{cityName} Weather</div>
                 </div>
                 <div className='currentWind'>
                     <div className='currentWindSpeed'>{Math.round(props.data.wind_speed)} <br></br>kph</div>  
