@@ -1,6 +1,5 @@
-import React, {useEffect, useState} from "react";
+import React, {useState} from "react";
 import moment from 'moment'
-import HourlyCard from "./HourlyCard";
 import { toUpper } from "./Utils";
 
 

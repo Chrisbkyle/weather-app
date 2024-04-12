@@ -27,21 +27,21 @@ export default function CurrentDay(props) {
 
     const windDirImg = (dir) => {
         if(dir === 'N') {
-            return <img src={N}></img>
+            return <img src={N} alt="direction N"></img>
         } else if(dir === 'NE') {
-            return <img src={NE}></img>
+            return <img src={NE} alt="direction NE"></img>
         } else if(dir === 'E') {
-            return <img src={E}></img>
+            return <img src={E} alt="direction E"></img>
         } else if(dir === 'SE') {
-            return <img src={SE}></img>
+            return <img src={SE} alt="direction SE"></img>
         } else if(dir === 'S') {
-            return <img src={S}></img>
+            return <img src={S} alt="direction S"></img>
         } else if(dir === 'SW') {
-            return <img src={SW}></img>
+            return <img src={SW} alt="direction SW"></img>
         } else if(dir === 'W') {
-            return <img src={W}></img>
+            return <img src={W} alt="direction W"></img>
         } else if(dir === 'NW') {
-            return <img src={NW}></img>
+            return <img src={NW} alt="direction NW"></img>
         } else {
             return 
         }

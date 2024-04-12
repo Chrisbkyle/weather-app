@@ -23,7 +23,7 @@ export default function Main({location}) {
         .catch((err) => 
             console.log(err)
             )
-        axios.get(`https://us1.locationiq.com/v1/reverse?key=pk.9d8a3172e1cc856946b0ef12fbc1f9ff&lat=${location.latitude}&lon=${location.longitude}&format=json`)
+        axios.get(`https://us1.locationiq.com/v1/reverse?key=pk.9d8a3172e1cc856946b0ef12fbc1f9ff&lat=${latitude}&lon=${longitude}&format=json`)
         .then((res) => {
             if('city' in res.data.address) {
                 setCityName(res.data.address.city)
@@ -40,7 +40,7 @@ export default function Main({location}) {
         .catch((err) => 
             console.log(err)
             )
-    }, [])
+    }, [latitude, longitude])
 
     const setTab = (e) => {
         setActiveTab(e.target.value)
