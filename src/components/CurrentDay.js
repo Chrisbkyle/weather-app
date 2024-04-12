@@ -26,7 +26,7 @@ export default function CurrentDay(props) {
 
     useEffect(() => {
         setCityName(props.location.cityName)
-    }, [cityName])
+    })
 
     const windDirImg = (dir) => {
         if(dir === 'N') {
