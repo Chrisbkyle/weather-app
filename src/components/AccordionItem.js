@@ -8,7 +8,7 @@ export default function AccordionItem({key, forcast, onToggle, active, resize, d
     return(
         <div className='flex-item flex-row'>
             <div onClick={onToggle} className={`flex-item-header ${resize ? 'small' : ''}`}>
-                <div>{day}               {active ? '\u25B2' : '\u25BC'} </div>
+                <div>{day}               {active ? '\u25B6' : '\u25C0'} </div>
             </div>
             <div className={`flex-item-content flex-col ${active ? 'showing' : ''}`}>
                 <div className='weekDescription flex-col border-black'>
